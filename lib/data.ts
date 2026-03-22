@@ -122,7 +122,8 @@ export const galleryPlaceholders = [
   },
   {
     title: "Braids & Cornrows",
-    alt: "Placeholder for braid portfolio images",
+    src: "/gallery/salon photo space.jpeg",
+    alt: "Professional braiding and cornrow styling",
     note: "Use real braid and cornrow work from the salon."
   },
   {
@@ -142,7 +143,8 @@ export const galleryPlaceholders = [
   },
   {
     title: "Client Smiles",
-    alt: "Placeholder for happy client photos",
+    src: "/gallery/client smiles.jpeg",
+    alt: "Happy client with finished hairstyle",
     note: "Real client reactions build trust and increase bookings."
   }
 ];

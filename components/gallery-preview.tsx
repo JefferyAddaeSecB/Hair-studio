@@ -57,6 +57,16 @@ export function GalleryPreview() {
                       </div>
                     </div>
                   </div>
+                ) : image.src ? (
+                  <div className="relative overflow-hidden rounded-[1.6rem]">
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      width={400}
+                      height={300}
+                      className="w-full h-[20rem] object-cover transition duration-700 hover:scale-105"
+                    />
+                  </div>
                 ) : (
                   <div
                     className={`flex items-center justify-center rounded-[1.6rem] border-2 border-dashed border-rosewood/20 bg-gradient-to-br from-white/80 via-sand to-white/50 px-6 text-center ${
