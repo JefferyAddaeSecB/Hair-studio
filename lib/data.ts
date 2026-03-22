@@ -126,12 +126,6 @@ export const galleryPlaceholders = [
     note: "Use real braid and cornrow work from the salon."
   },
   {
-    title: "Salon Photo Space",
-    src: "/gallery/salon photo space.jpeg",
-    alt: "Professional salon environment and styling",
-    note: "Showcase our beautiful salon space and professional setup."
-  },
-  {
     title: "Wig Install Results",
     alt: "Placeholder for wig installation images",
     note: "Show clean install details and styled finishes."
