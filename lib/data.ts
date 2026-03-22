@@ -147,34 +147,29 @@ export const galleryPlaceholders = [
 
 export const galleryImages = [
   {
-    src: "/gallery/finger_waves_before.jpg",
+    src: "/gallery/WhatsApp Image 2026-03-22 at 2.55.40 PM (1).jpeg",
     alt: "Finger waves hairstyle - defined waves with shiny finish",
     title: "Classic Finger Waves"
   },
   {
-    src: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=900&q=80",
-    alt: "Woman smiling with voluminous curls",
-    title: "Soft Defined Curls"
+    src: "/gallery/WhatsApp Image 2026-03-22 at 2.55.40 PM (3).jpeg",
+    alt: "Professional hair styling result",
+    title: "Styled Perfection"
   },
   {
-    src: "https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=900&q=80",
-    alt: "Close-up of highlighted hair",
-    title: "Sunlit Color Blend"
+    src: "/gallery/WhatsApp Image 2026-03-22 at 2.55.42 PM (2).jpeg",
+    alt: "Hair transformation before and after",
+    title: "Transformation Complete"
   },
   {
-    src: "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=900&q=80",
-    alt: "Woman with elegant event hairstyle",
-    title: "Event Styling Elegance"
+    src: "/gallery/WhatsApp Image 2026-03-22 at 2.55.42 PM (3).jpeg",
+    alt: "Client with finished hairstyle",
+    title: "Client Satisfaction"
   },
   {
-    src: "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=900&q=80",
-    alt: "Woman with sleek straightened hair",
-    title: "Silk Press Finish"
-  },
-  {
-    src: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80",
-    alt: "Happy woman with styled natural hair",
-    title: "Natural Texture Glow"
+    src: "/gallery/WhatsApp Image 2026-03-22 at 2.55.43 PM (3).jpeg",
+    alt: "Professional salon styling",
+    title: "Salon Excellence"
   }
 ];
 
