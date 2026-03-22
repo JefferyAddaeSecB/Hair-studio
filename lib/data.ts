@@ -141,6 +141,11 @@ export const galleryPlaceholders = [
     note: "Highlight real clients and healthy natural hair results."
   },
   {
+    title: "Shampooing",
+    alt: "Placeholder for shampooing and hair washing images",
+    note: "Show professional shampooing techniques and relaxing hair care experience."
+  },
+  {
     title: "Client Smiles",
     src: "/gallery/client smiles.jpeg",
     alt: "Happy client with finished hairstyle",
@@ -173,6 +178,11 @@ export const galleryImages = [
     src: "/gallery/WhatsApp Image 2026-03-22 at 2.55.43 PM (3).jpeg",
     alt: "Professional salon styling",
     title: "Salon Excellence"
+  },
+  {
+    src: "https://images.unsplash.com/photo-1562322145-9668a5a803ef?auto=format&fit=crop&w=900&q=80",
+    alt: "Professional shampooing service",
+    title: "Relaxing Shampoo Treatment"
   }
 ];
 
