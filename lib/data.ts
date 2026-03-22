@@ -115,8 +115,10 @@ export const testimonials = [
 export const galleryPlaceholders = [
   {
     title: "Before & After",
-    alt: "Placeholder for transformation photos",
-    note: "Insert before-and-after client result photos here."
+    src: "/gallery/before.jpeg",
+    afterSrc: "/gallery/after.jpeg",
+    alt: "Client transformation before and after",
+    note: "Amazing client transformation showing our styling expertise."
   },
   {
     title: "Braids & Cornrows",

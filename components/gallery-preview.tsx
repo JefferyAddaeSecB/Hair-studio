@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { MotionReveal } from "@/components/motion-reveal";
 import { SectionHeading } from "@/components/section-heading";
 import { galleryPlaceholders } from "@/lib/data";
@@ -29,18 +30,47 @@ export function GalleryPreview() {
               className={index === 0 ? "sm:col-span-2 xl:col-span-2" : ""}
             >
               <article className="glass-card overflow-hidden p-3">
-                <div
-                  className={`flex items-center justify-center rounded-[1.6rem] border-2 border-dashed border-rosewood/20 bg-gradient-to-br from-white/80 via-sand to-white/50 px-6 text-center ${
-                    index === 0 ? "h-[20rem] sm:h-[26rem]" : "h-[20rem]"
-                  }`}
-                >
-                  <div className="max-w-xs space-y-3">
-                    <p className="font-[var(--font-heading)] text-4xl font-semibold text-rosewood">
-                      {image.title}
-                    </p>
-                    <p className="text-sm leading-7 text-ink/65">{image.note}</p>
+                {index === 0 && image.src && image.afterSrc ? (
+                  <div className="grid grid-cols-2 gap-2 rounded-[1.6rem] overflow-hidden">
+                    <div className="relative">
+                      <Image
+                        src={image.src}
+                        alt="Before"
+                        width={400}
+                        height={300}
+                        className="w-full h-[20rem] sm:h-[26rem] object-cover"
+                      />
+                      <div className="absolute top-4 left-4 bg-rosewood text-white px-3 py-1 rounded-full text-sm font-semibold">
+                        Before
+                      </div>
+                    </div>
+                    <div className="relative">
+                      <Image
+                        src={image.afterSrc}
+                        alt="After"
+                        width={400}
+                        height={300}
+                        className="w-full h-[20rem] sm:h-[26rem] object-cover"
+                      />
+                      <div className="absolute top-4 right-4 bg-green-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                        After
+                      </div>
+                    </div>
                   </div>
-                </div>
+                ) : (
+                  <div
+                    className={`flex items-center justify-center rounded-[1.6rem] border-2 border-dashed border-rosewood/20 bg-gradient-to-br from-white/80 via-sand to-white/50 px-6 text-center ${
+                      index === 0 ? "h-[20rem] sm:h-[26rem]" : "h-[20rem]"
+                    }`}
+                  >
+                    <div className="max-w-xs space-y-3">
+                      <p className="font-[var(--font-heading)] text-4xl font-semibold text-rosewood">
+                        {image.title}
+                      </p>
+                      <p className="text-sm leading-7 text-ink/65">{image.note}</p>
+                    </div>
+                  </div>
+                )}
                 <div className="px-2 pb-2 pt-4">
                   <p className="font-[var(--font-heading)] text-3xl font-semibold text-rosewood">
                     {image.title}
