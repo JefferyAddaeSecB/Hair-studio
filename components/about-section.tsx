@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { MotionReveal } from "@/components/motion-reveal";
 import { SectionHeading } from "@/components/section-heading";
 import { aboutHighlights } from "@/lib/data";
@@ -33,16 +34,15 @@ export function AboutSection() {
           </div>
         </div>
 
-        <MotionReveal className="glass-card p-3">
-          <div className="flex h-[24rem] items-center justify-center rounded-[1.7rem] border-2 border-dashed border-rosewood/20 bg-gradient-to-br from-white/80 via-sand to-white/50 px-8 text-center sm:h-[30rem]">
-            <div className="max-w-sm space-y-3">
-              <p className="font-[var(--font-heading)] text-4xl font-semibold text-rosewood">
-                Salon Photo Space
-              </p>
-              <p className="text-sm leading-7 text-ink/65">
-                Replace this area with a real interior, stylist-at-work, or client transformation photo from Abena Hair Studio.
-              </p>
-            </div>
+        <MotionReveal className="glass-card overflow-hidden p-3">
+          <div className="relative overflow-hidden rounded-[1.7rem]">
+            <Image
+              src="/gallery/salon photo space.jpeg"
+              alt="Abena Hair Studio interior and professional setup"
+              width={600}
+              height={400}
+              className="h-[24rem] w-full object-cover transition duration-700 hover:scale-105 sm:h-[30rem]"
+            />
           </div>
         </MotionReveal>
       </div>
