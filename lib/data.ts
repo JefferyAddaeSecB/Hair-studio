@@ -142,7 +142,8 @@ export const galleryPlaceholders = [
   },
   {
     title: "Shampooing",
-    alt: "Placeholder for shampooing and hair washing images",
+    src: "/gallery/shampooing.jpeg",
+    alt: "Professional shampooing service and hair care treatment",
     note: "Show professional shampooing techniques and relaxing hair care experience."
   },
   {
@@ -180,7 +181,7 @@ export const galleryImages = [
     title: "Salon Excellence"
   },
   {
-    src: "https://images.unsplash.com/photo-1562322145-9668a5a803ef?auto=format&fit=crop&w=900&q=80",
+    src: "/gallery/shampooing.jpeg",
     alt: "Professional shampooing service",
     title: "Relaxing Shampoo Treatment"
   }
