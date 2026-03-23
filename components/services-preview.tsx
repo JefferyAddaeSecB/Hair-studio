@@ -41,13 +41,15 @@ export function ServicesPreview() {
           Tip: Adding clear prices or “Starting from...” helps build trust with new clients.
         </p>
 
-        <Link
-          href="/services"
-          className="inline-flex items-center gap-2 rounded-full border border-rosewood/15 bg-white/70 px-6 py-4 text-sm font-semibold text-rosewood transition hover:bg-white"
-        >
-          View all services
-          <ArrowRight className="h-4 w-4" />
-        </Link>
+        <div className="flex justify-center">
+          <Link
+            href="/services"
+            className="inline-flex items-center gap-2 rounded-full border border-rosewood/15 bg-white/70 px-6 py-4 text-sm font-semibold text-rosewood transition hover:bg-white"
+          >
+            View all services
+            <ArrowRight className="h-4 w-4" />
+          </Link>
+        </div>
       </div>
     </section>
   );
