@@ -9,7 +9,7 @@ export async function POST(request: Request) {
     const supabase = getSupabaseAdmin();
 
     if (supabase) {
-      const { error } = await supabase.from("messages").insert({
+      const { error } = await supabase.from("contact_messages").insert({
         name: payload.name,
         email: payload.email,
         message: payload.message

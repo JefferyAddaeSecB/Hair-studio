@@ -3,6 +3,7 @@ import { Cormorant_Garamond, Manrope } from "next/font/google";
 import "./globals.css";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { AuthProvider } from "@/lib/admin/auth-context";
 
 const headingFont = Cormorant_Garamond({
   subsets: ["latin"],
@@ -32,12 +33,14 @@ export default function RootLayout({
       <body
         className={`${headingFont.variable} ${bodyFont.variable} font-[var(--font-body)]`}
       >
-        <div className="relative overflow-hidden">
-          <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[34rem] bg-soft-radial" />
-          <SiteHeader />
-          <main>{children}</main>
-          <SiteFooter />
-        </div>
+        <AuthProvider>
+          <div className="relative overflow-hidden">
+            <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[34rem] bg-soft-radial" />
+            <SiteHeader />
+            <main>{children}</main>
+            <SiteFooter />
+          </div>
+        </AuthProvider>
       </body>
     </html>
   );

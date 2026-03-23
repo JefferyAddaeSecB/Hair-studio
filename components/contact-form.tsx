@@ -29,14 +29,14 @@ export function ContactForm() {
   return (
     <form
       action={(formData) => startTransition(() => handleSubmit(formData))}
-      className="glass-card space-y-5 p-6 sm:p-8"
+      className="glass-card space-y-4 p-4 sm:space-y-5 sm:p-8 md:p-8 lg:p-8"
     >
       <label className="space-y-2 text-sm font-medium text-ink/80">
         Name
         <input
           name="name"
           placeholder="Your full name"
-          className="w-full rounded-2xl border border-rosewood/10 bg-sand/70 px-4 py-3 outline-none transition focus:border-terracotta"
+          className="w-full rounded-2xl border border-rosewood/10 bg-sand/70 px-4 py-3 text-base outline-none transition focus:border-terracotta focus:ring-1 focus:ring-terracotta"
           required
         />
       </label>
@@ -46,7 +46,7 @@ export function ContactForm() {
           type="email"
           name="email"
           placeholder="you@example.com"
-          className="w-full rounded-2xl border border-rosewood/10 bg-sand/70 px-4 py-3 outline-none transition focus:border-terracotta"
+          className="w-full rounded-2xl border border-rosewood/10 bg-sand/70 px-4 py-3 text-base outline-none transition focus:border-terracotta focus:ring-1 focus:ring-terracotta"
           required
         />
       </label>
@@ -54,21 +54,25 @@ export function ContactForm() {
         Message
         <textarea
           name="message"
-          rows={6}
+          rows={4}
           placeholder="Ask about appointments, bridal styling, or collaboration."
-          className="w-full rounded-[1.5rem] border border-rosewood/10 bg-sand/70 px-4 py-3 outline-none transition focus:border-terracotta"
+          className="w-full rounded-[1.5rem] border border-rosewood/10 bg-sand/70 px-4 py-3 text-base outline-none transition focus:border-terracotta focus:ring-1 focus:ring-terracotta sm:rows-5 md:rows-6"
           required
         />
       </label>
-      <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+      <div className="flex flex-col gap-3 sm:gap-4 sm:flex-row sm:items-center sm:justify-between">
         <button
           type="submit"
           disabled={isPending}
-          className="inline-flex items-center justify-center rounded-full bg-rosewood px-6 py-4 text-sm font-semibold text-white transition hover:bg-terracotta disabled:cursor-not-allowed disabled:opacity-70"
+          className="w-full sm:w-auto inline-flex items-center justify-center rounded-full bg-rosewood px-6 py-3 text-sm font-semibold text-white transition hover:bg-terracotta active:scale-95 disabled:cursor-not-allowed disabled:opacity-70 sm:py-4"
         >
           {isPending ? "Sending..." : "Send message"}
         </button>
-        <p className={`text-sm ${state.ok ? "text-olive" : "text-terracotta"}`}>{state.message}</p>
+        {state.message && (
+          <p className={`text-xs sm:text-sm text-center sm:text-right ${state.ok ? "text-olive" : "text-terracotta"}`}>
+            {state.message}
+          </p>
+        )}
       </div>
     </form>
   );

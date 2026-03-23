@@ -23,15 +23,15 @@ export function SiteFooter() {
           <p className="font-semibold uppercase tracking-[0.25em] text-terracotta">Visit</p>
           <p className="flex items-center gap-3">
             <MapPin className="h-4 w-4 text-rosewood" />
-            18 Rose Avenue, Lagos
+            Ojeine St, Accra
           </p>
           <p className="flex items-center gap-3">
             <Phone className="h-4 w-4 text-rosewood" />
-            +234 800 555 0108
+            +233 (0) 246 447 824
           </p>
           <p className="flex items-center gap-3">
             <Mail className="h-4 w-4 text-rosewood" />
-            hello@abenahairstudio.com
+            abenahairstudio@gmail.com
           </p>
         </div>
 

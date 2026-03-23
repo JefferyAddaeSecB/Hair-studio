@@ -121,9 +121,9 @@ export const galleryPlaceholders = [
     note: "Amazing client transformation showing our styling expertise."
   },
   {
-    title: "Braids & Cornrows",
-    alt: "Placeholder for braid portfolio images",
-    note: "Use real braid and cornrow work from the salon."
+    title: "Hair Cutting",
+    alt: "Placeholder for hair cutting images",
+    note: "Show professional hair cutting and styling results."
   },
   {
     title: "Wig Install Results",
@@ -136,9 +136,9 @@ export const galleryPlaceholders = [
     note: "Feature wedding looks and special event transformations."
   },
   {
-    title: "Natural Hair Care",
-    alt: "Placeholder for natural hair service photos",
-    note: "Highlight real clients and healthy natural hair results."
+    title: "Training",
+    alt: "Placeholder for training images",
+    note: "Display training sessions and educational content."
   },
   {
     title: "Shampooing",
@@ -161,17 +161,14 @@ export const galleryImages = [
     title: "Classic Finger Waves"
   },
   {
-    src: "/gallery/WhatsApp Image 2026-03-22 at 2.55.40 PM (3).jpeg",
     alt: "Professional hair styling result",
     title: "Styled Perfection"
   },
   {
-    src: "/gallery/WhatsApp Image 2026-03-22 at 2.55.42 PM (2).jpeg",
     alt: "Hair transformation before and after",
     title: "Transformation Complete"
   },
   {
-    src: "/gallery/WhatsApp Image 2026-03-22 at 2.55.42 PM (3).jpeg",
     alt: "Client with finished hairstyle",
     title: "Client Satisfaction"
   },
@@ -235,7 +232,7 @@ export const locationInfo = [
   {
     icon: MapPin,
     label: "Location",
-    value: "[Your Area in Accra]"
+    value: "Osu, Accra"
   },
   {
     icon: CalendarDays,

@@ -37,7 +37,7 @@ export function ContactSection() {
                 <p className="text-xs font-semibold uppercase tracking-[0.28em] text-terracotta">
                   Phone
                 </p>
-                <p className="mt-2 text-base leading-8 text-ink/75">[Your Number]</p>
+                <p className="mt-2 text-base leading-8 text-ink/75">0246447824</p>
               </div>
             </div>
 
@@ -49,21 +49,28 @@ export function ContactSection() {
                 <p className="text-xs font-semibold uppercase tracking-[0.28em] text-terracotta">
                   Email
                 </p>
-                <p className="mt-2 text-base leading-8 text-ink/75">[Your Email]</p>
+                <p className="mt-2 text-base leading-8 text-ink/75">abenahairstudio@gmail.com</p>
               </div>
             </div>
           </div>
         </div>
 
         <MotionReveal className="glass-card p-3">
-          <div className="flex h-[24rem] items-center justify-center rounded-[1.7rem] border-2 border-dashed border-rosewood/20 bg-gradient-to-br from-white/80 via-sand to-white/50 px-8 text-center sm:h-[32rem]">
-            <div className="max-w-sm space-y-3">
-              <p className="font-[var(--font-heading)] text-4xl font-semibold text-rosewood">
-                Google Map Space
-              </p>
-              <p className="text-sm leading-7 text-ink/65">
-                Keep this area for your Google Map embed or a real storefront photo to help local discovery.
-              </p>
+          <div className="rounded-[1.7rem] border-2 border-dashed border-rosewood/20 bg-gradient-to-br from-white/80 via-sand to-white/50 p-6 sm:p-8">
+            <p className="font-[var(--font-heading)] text-4xl font-semibold text-rosewood text-center">
+              Google Map Space
+            </p>
+            <div className="mt-6">
+              <div className="relative h-[320px] w-full overflow-hidden rounded-xl">
+                <iframe
+                  className="absolute inset-0 h-full w-full"
+                  src="https://www.google.com/maps?q=Osu,+Accra&output=embed"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Abena Hair Studio Location"
+                  style={{ border: 0 }}
+                />
+              </div>
             </div>
           </div>
         </MotionReveal>

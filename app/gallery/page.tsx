@@ -23,15 +23,25 @@ export default function GalleryPage() {
             >
               <article className="glass-card overflow-hidden p-3">
                 <div className="relative overflow-hidden rounded-[1.7rem]">
-                  <Image
-                    src={image.src}
-                    alt={image.alt}
-                    width={900}
-                    height={900}
-                    className={`w-full object-cover transition duration-700 hover:scale-105 ${
-                      index % 5 === 0 ? "h-[20rem] sm:h-[25rem]" : "h-[20rem]"
-                    }`}
-                  />
+                  {image.src ? (
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      width={900}
+                      height={900}
+                      className={`w-full object-cover transition duration-700 hover:scale-105 ${
+                        index % 5 === 0 ? "h-[20rem] sm:h-[25rem]" : "h-[20rem]"
+                      }`}
+                    />
+                  ) : (
+                    <div
+                      className={`w-full bg-gradient-to-br from-sand to-white/50 flex items-center justify-center text-rosewood font-semibold ${
+                        index % 5 === 0 ? "h-[20rem] sm:h-[25rem]" : "h-[20rem]"
+                      }`}
+                    >
+                      Image Placeholder
+                    </div>
+                  )}
                 </div>
                 <div className="px-2 pb-2 pt-4">
                   <p className="font-[var(--font-heading)] text-3xl font-semibold text-rosewood">

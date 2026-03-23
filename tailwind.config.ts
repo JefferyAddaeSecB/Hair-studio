@@ -13,7 +13,8 @@ const config: Config = {
         rosewood: "#5c2e23",
         terracotta: "#bc6c54",
         olive: "#66714f",
-        ink: "#1d1715"
+        ink: "#1d1715",
+        gold: "#d4af37"
       },
       boxShadow: {
         glow: "0 18px 60px rgba(98, 54, 42, 0.18)"

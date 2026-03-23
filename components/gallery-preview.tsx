@@ -25,7 +25,7 @@ export function GalleryPreview() {
         <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
           {galleryPlaceholders.map((image, index) => (
             <MotionReveal
-              key={image.title}
+              key={index}
               delay={index * 0.08}
               className={index === 0 ? "sm:col-span-2 xl:col-span-2" : ""}
             >

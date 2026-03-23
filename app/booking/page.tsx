@@ -23,7 +23,7 @@ export default function BookingPage() {
                   Studio Hours
                 </h3>
                 <p className="mt-2 text-sm leading-7 text-ink/75">
-                  Tuesday to Saturday, 9:00 AM to 7:00 PM. Sunday appointments are available for bridal and event requests.
+                  Monday to Saturday, 8:00 AM to 7:00 PM. Sunday appointments are available for bridal and event requests.
                 </p>
               </div>
             </div>
