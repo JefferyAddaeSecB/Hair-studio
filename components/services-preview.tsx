@@ -11,7 +11,7 @@ export function ServicesPreview() {
         <SectionHeading
           eyebrow="Services"
           title="Our Services"
-          description="Hair Braiding & Cornrows, Wig Installation & Styling, Hair Cutting & Trimming, Hair Coloring & Treatments, Bridal & Event Styling, and Natural Hair Care."
+          description="Frontal Pony, Wig Installation & Styling, Hair Cutting & Trimming, Hair Coloring & Treatments, WEAVE-ON, Wig Making, Hair Relaxing, Training, and Bridal & Event Styling."
         />
 
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">

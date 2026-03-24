@@ -31,44 +31,56 @@ export const heroStats = [
 export const services = [
   {
     icon: Scissors,
-    title: "Hair Braiding & Cornrows",
-    description:
-      "Protective styling with neat parts, clean finishes, and comfortable long-wear results.",
-    price: "Starting from $25"
+    title: "Frontal Pony",
+    description: "A frontal pony that stays sleek, stay secure and stay true to your signature look.",
+    price: "Starting from ¢300"
   },
   {
     icon: Brush,
     title: "Wig Installation & Styling",
-    description:
-      "Secure installs, natural blends, and styling tailored to the look you want.",
-    price: "Starting from $40"
+    description: "Secure installs, natural blends, and styling tailored to the look you want.",
+    price: "Starting from ¢250"
   },
   {
     icon: Waves,
     title: "Hair Cutting & Trimming",
-    description:
-      "Healthy shaping and maintenance cuts to refresh your hair without losing intention.",
-    price: "Starting from $18"
+    description: "Healthy shaping and maintenance cuts to refresh your hair without losing intention.",
+    price: "Starting from ¢60"
   },
   {
     icon: Sparkles,
     title: "Hair Coloring & Treatments",
-    description:
-      "Color refresh, repair rituals, and nourishing treatments that support healthy shine.",
-    price: "Starting from $35"
+    description: "Color refresh, repair rituals, and nourishing treatments that support healthy shine.",
+    price: "Starting from ¢150"
   },
   {
     icon: Leaf,
-    title: "Natural Hair Care",
-    description:
-      "Hydration-first styling and maintenance for natural textures, coils, and curls.",
-    price: "Starting from $22"
+    title: "WEAVE-ON",
+    description: "Refresh your weave-on, revive your style - no stress, just effortless beauty.",
+    price: "Starting from ¢250"
+  },
+  {
+    icon: Crown,
+    title: "Wig Making",
+    description: "Thoughtfully crafted wigs that keep your style fresh, refined, and authentically you.",
+    price: "Starting from ¢300"
+  },
+  {
+    icon: HeartHandshake,
+    title: "Hair Relaxing",
+    description: "A careful relaxer process that soften your texture while maintaining the integrity of your hair.",
+    price: "Starting from ¢250"
+  },
+  {
+    icon: Award,
+    title: "Training",
+    description: "Refine your skills with training designed to refresh your passion, not replace it.",
+    price: "Custom quote"
   },
   {
     icon: CalendarDays,
     title: "Bridal & Event Styling",
-    description:
-      "Elegant styling for weddings, shoots, and special events with lasting finish work.",
+    description: "Elegant styling for weddings, shoots, and special events with lasting finish work.",
     price: "Custom quote"
   }
 ];
@@ -242,10 +254,14 @@ export const locationInfo = [
 ];
 
 export const bookingOptions = [
-  "Hair Braiding & Cornrows",
+  "Frontal Pony",
   "Wig Installation & Styling",
   "Hair Cutting & Trimming",
   "Hair Coloring & Treatments",
+  "WEAVE-ON",
+  "Wig Making",
+  "Hair Relaxing",
+  "Training",
   "Bridal & Event Styling"
 ];
 
