@@ -20,7 +20,23 @@ const bodyFont = Manrope({
 export const metadata: Metadata = {
   title: "Abena Hair Studio",
   description:
-    "Responsive ladies salon website built with Next.js, Tailwind CSS, TypeScript, and Supabase-ready booking flows."
+    "Responsive ladies salon website built with Next.js, Tailwind CSS, TypeScript, and Supabase-ready booking flows.",
+  viewport: "width=device-width, initial-scale=1",
+  robots: "index, follow",
+  openGraph: {
+    title: "Abena Hair Studio - Professional Hair Services in Accra",
+    description: "Professional hair salon offering Frontal Pony, Wig Installation, Hair Cutting, Coloring, Treatments and more in Accra, Ghana",
+    url: "https://abenahairstudio.com",
+    siteName: "Abena Hair Studio",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Abena Hair Studio - Professional Hair Services"
+      }
+    ]
+  }
 };
 
 export default function RootLayout({

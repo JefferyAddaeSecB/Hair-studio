@@ -7,6 +7,9 @@ import { useState } from "react";
 import { navLinks } from "@/lib/data";
 import { cn } from "@/lib/utils";
 
+// Add prefetch for critical navigation links
+const criticalLinks = ["/", "/services", "/gallery", "/booking", "/contact"];
+
 export function SiteHeader() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
@@ -33,6 +36,7 @@ export function SiteHeader() {
             <Link
               key={link.href}
               href={link.href}
+              prefetch={criticalLinks.includes(link.href)}
               className={cn(
                 "rounded-full px-4 py-2 text-sm font-semibold transition hover:bg-white/80 hover:text-rosewood",
                 pathname === link.href ? "bg-white text-rosewood shadow-sm" : "text-ink/75"
@@ -66,6 +70,7 @@ export function SiteHeader() {
               <Link
                 key={link.href}
                 href={link.href}
+                prefetch={criticalLinks.includes(link.href)}
                 className={cn(
                   "rounded-2xl px-4 py-3 text-sm font-semibold transition",
                   pathname === link.href ? "bg-sand text-rosewood" : "text-ink/80"
