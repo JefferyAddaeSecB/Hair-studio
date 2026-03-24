@@ -64,7 +64,7 @@ export function ContactSection() {
               <div className="relative h-[320px] w-full overflow-hidden rounded-xl">
                 <iframe
                   className="absolute inset-0 h-full w-full"
-                  src="https://www.google.com/maps?q=Osu,+Accra&output=embed"
+                  src="https://www.google.com/maps?q=Ojeine+St,+Accra&output=embed"
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                   title="Abena Hair Studio Location"

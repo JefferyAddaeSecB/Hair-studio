@@ -232,7 +232,7 @@ export const locationInfo = [
   {
     icon: MapPin,
     label: "Location",
-    value: "Osu, Accra"
+    value: "Ojeine St, Accra"
   },
   {
     icon: CalendarDays,
