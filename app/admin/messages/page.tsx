@@ -4,7 +4,6 @@ import { AdminNavbar } from "@/components/admin/navbar";
 import { DataTable, TableColumn } from "@/components/admin/data-table";
 import { mockMessages, ContactMessage } from "@/lib/admin/mock-data";
 import { useState, useEffect } from "react";
-import { getSupabaseAdmin } from "@/lib/supabase";
 
 function formatDate(dateString: string): string {
   const date = new Date(dateString);
@@ -24,26 +23,24 @@ export default function MessagesPage() {
 
   useEffect(() => {
     async function fetchMessages() {
-      const supabase = getSupabaseAdmin();
-
-      if (!supabase) {
-        setIsLoading(false);
-        return;
-      }
-
       try {
-        const { data, error } = await supabase
-          .from("contact_messages")
-          .select("id, name, email, message, created_at")
-          .order("created_at", { ascending: false });
+        const response = await fetch("/api/admin/messages", {
+          cache: "no-store"
+        });
 
-        if (!error && data) {
-          setMessages(data as ContactMessage[]);
-        } else {
-          console.error("Error fetching messages:", error);
+        if (!response.ok) {
+          throw new Error("Failed to fetch messages");
+        }
+
+        const data = (await response.json()) as {
+          messages?: ContactMessage[];
+        };
+
+        if (Array.isArray(data.messages)) {
+          setMessages(data.messages);
         }
       } catch (error) {
-        console.error("Error:", error);
+        console.error("Error fetching messages:", error);
       } finally {
         setIsLoading(false);
       }
@@ -54,27 +51,18 @@ export default function MessagesPage() {
 
   const handleDelete = async (id: string) => {
     if (confirm("Are you sure you want to delete this message?")) {
-      const supabase = getSupabaseAdmin();
-
-      if (!supabase) {
-        setMessages(messages.filter((msg) => msg.id !== id));
-        return;
-      }
-
       try {
-        const { error } = await supabase
-          .from("contact_messages")
-          .delete()
-          .eq("id", id);
+        const response = await fetch(`/api/admin/messages/${id}`, {
+          method: "DELETE"
+        });
 
-        if (!error) {
+        if (response.ok) {
           setMessages(messages.filter((msg) => msg.id !== id));
         } else {
-          console.error("Error deleting message:", error);
           alert("Failed to delete message");
         }
       } catch (error) {
-        console.error("Error:", error);
+        console.error("Error deleting message:", error);
       }
     }
   };

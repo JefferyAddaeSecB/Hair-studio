@@ -5,7 +5,6 @@ import { DataTable, TableColumn } from "@/components/admin/data-table";
 import { mockBookings, Booking } from "@/lib/admin/mock-data";
 import { useState, useEffect } from "react";
 import { CheckCircle, Clock } from "lucide-react";
-import { getSupabaseAdmin } from "@/lib/supabase";
 
 function formatDate(dateString: string): string {
   const date = new Date(dateString);
@@ -34,26 +33,24 @@ export default function BookingsPage() {
 
   useEffect(() => {
     async function fetchBookings() {
-      const supabase = getSupabaseAdmin();
-
-      if (!supabase) {
-        setIsLoading(false);
-        return;
-      }
-
       try {
-        const { data, error } = await supabase
-          .from("bookings")
-          .select("id, full_name, email, phone, service, preferred_date, notes, created_at")
-          .order("created_at", { ascending: false });
+        const response = await fetch("/api/admin/bookings", {
+          cache: "no-store"
+        });
 
-        if (!error && data) {
-          setBookings(data as Booking[]);
-        } else {
-          console.error("Error fetching bookings:", error);
+        if (!response.ok) {
+          throw new Error("Failed to fetch bookings");
+        }
+
+        const data = (await response.json()) as {
+          bookings?: Booking[];
+        };
+
+        if (Array.isArray(data.bookings)) {
+          setBookings(data.bookings);
         }
       } catch (error) {
-        console.error("Error:", error);
+        console.error("Error fetching bookings:", error);
       } finally {
         setIsLoading(false);
       }
@@ -64,27 +61,18 @@ export default function BookingsPage() {
 
   const handleDelete = async (id: string) => {
     if (confirm("Are you sure you want to delete this booking?")) {
-      const supabase = getSupabaseAdmin();
-
-      if (!supabase) {
-        setBookings(bookings.filter((booking) => booking.id !== id));
-        return;
-      }
-
       try {
-        const { error } = await supabase
-          .from("bookings")
-          .delete()
-          .eq("id", id);
+        const response = await fetch(`/api/admin/bookings/${id}`, {
+          method: "DELETE"
+        });
 
-        if (!error) {
+        if (response.ok) {
           setBookings(bookings.filter((booking) => booking.id !== id));
         } else {
-          console.error("Error deleting booking:", error);
           alert("Failed to delete booking");
         }
       } catch (error) {
-        console.error("Error:", error);
+        console.error("Error deleting booking:", error);
       }
     }
   };

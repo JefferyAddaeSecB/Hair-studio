@@ -5,7 +5,6 @@ import { StatsCard } from "@/components/admin/stats-card";
 import { mockMessages, mockBookings } from "@/lib/admin/mock-data";
 import { Mail, Calendar, TrendingUp, MessageSquare } from "lucide-react";
 import { useState, useEffect } from "react";
-import { getSupabaseAdmin } from "@/lib/supabase";
 
 // Helper function to format relative time
 function timeAgo(date: string): string {
@@ -39,35 +38,29 @@ export default function AdminDashboard() {
 
   useEffect(() => {
     async function fetchData() {
-      const supabase = getSupabaseAdmin();
-      
-      if (!supabase) {
-        setIsLoading(false);
-        return;
-      }
-
       try {
-        // Fetch contact messages
-        const { data: messagesData, error: messagesError } = await supabase
-          .from("contact_messages")
-          .select("id, name, email, message, created_at")
-          .order("created_at", { ascending: false });
+        const response = await fetch("/api/admin/dashboard", {
+          cache: "no-store"
+        });
 
-        if (!messagesError && messagesData) {
-          setMessages(messagesData as any);
+        if (!response.ok) {
+          throw new Error("Failed to fetch dashboard data");
         }
 
-        // Fetch bookings
-        const { data: bookingsData, error: bookingsError } = await supabase
-          .from("bookings")
-          .select("id, full_name, email, phone, service, preferred_date, notes, created_at")
-          .order("created_at", { ascending: false });
+        const data = (await response.json()) as {
+          messages?: typeof mockMessages;
+          bookings?: typeof mockBookings;
+        };
 
-        if (!bookingsError && bookingsData) {
-          setBookings(bookingsData as any);
+        if (Array.isArray(data.messages)) {
+          setMessages(data.messages);
+        }
+
+        if (Array.isArray(data.bookings)) {
+          setBookings(data.bookings);
         }
       } catch (error) {
-        console.error("Error fetching data from Supabase:", error);
+        console.error("Error fetching dashboard data:", error);
       } finally {
         setIsLoading(false);
       }
