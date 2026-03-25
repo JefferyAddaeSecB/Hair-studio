@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, Manrope } from "next/font/google";
 import "./globals.css";
 import { SiteFooter } from "@/components/site-footer";
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   title: "Abena Hair Studio",
   description:
     "Responsive ladies salon website built with Next.js, Tailwind CSS, TypeScript, and Supabase-ready booking flows.",
-  viewport: "width=device-width, initial-scale=1",
+  metadataBase: new URL("https://abenahairstudio.com"),
   robots: "index, follow",
   openGraph: {
     title: "Abena Hair Studio - Professional Hair Services in Accra",
@@ -37,6 +37,11 @@ export const metadata: Metadata = {
       }
     ]
   }
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1
 };
 
 export default function RootLayout({
